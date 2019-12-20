@@ -17,8 +17,8 @@ Write a program that gathers both a word and sentence from a user, then checks h
 | :------------- | :------------- | :------------- |
 | User input a word and a sentence. The word only appears once in the sentence. | big, I want to eat a big donut. | 1 |
 | User input a word and a sentence. The word appears multiple times in the sentence. | big, I want to eat a big donut and a big cookie at a big cafe. | 3 |
-| User input a word and a sentence. The word doesn't fully match with. | big, Her donut is bigger than mine. | 0 |
-| User input a number instead of a word and a sentence. | 10, Her donut is bigger than mine. | Invalid input! |
+| User input a word and a sentence. But the word doesn't fully match. | big, Her donut is bigger than mine. | 0 |
+| User input a number instead of a word and a sentence. | 10, I want to eat a big donut. | Invalid input! |
 | User input a word and a number instead of a sentence. | big,  123456789. | Invalid input! |
 
 
