@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
@@ -16,9 +17,13 @@ namespace WordCounter.Models
 
         public int CountWord()
         {
-            if(Sentence.Contains(Word))
+            string[] splittedSentence = Sentence.Split(' ');
+            foreach (string item in splittedSentence)
             {
-                WordCounter++;
+                if(item == Word)
+                {
+                    WordCounter++;
+                }
             }
             return WordCounter;
         }
