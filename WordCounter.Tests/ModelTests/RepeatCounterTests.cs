@@ -1,7 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WordCounter.Models;
 
-
 namespace WordCounter.Tests
 {
     [TestClass]
@@ -13,6 +12,7 @@ namespace WordCounter.Tests
             RepeatCounter tesRepeatCounter = new RepeatCounter("big", "I want to eat a big donut.");
             Assert.AreEqual(typeof(RepeatCounter), tesRepeatCounter.GetType());
         }
+
         [TestMethod]
         public void CountWord_ReturnWordCounter_1()
         {
@@ -35,6 +35,14 @@ namespace WordCounter.Tests
             RepeatCounter testCounter = new RepeatCounter("big", "I want to eat a bigger donut.");
             int result = testCounter.CountWord();
             Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        public void CountWord_WordCounterIncrementsWhenTheWordIsInQuoats_1()
+        {
+            RepeatCounter testCounter = new RepeatCounter("big", "I want to eat a \"big\" donut.");
+            int result = testCounter.CountWord();
+            Assert.AreEqual(1, result);
         }
         
         [TestMethod]

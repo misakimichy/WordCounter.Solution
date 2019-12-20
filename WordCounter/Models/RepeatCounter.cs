@@ -16,13 +16,10 @@ namespace WordCounter.Models
 
         public int CountWord()
         {
-            string[] splittedSentence = Sentence.Split(' ');
+            string[] splittedSentence = Sentence.Split(' ', '"', ',', '.', '\'', '!', '?', '#', '@', '$', '^', '[', ']', '(', ')', '{', '}', '&', ':', ';', '=', '+', '-', '*', '%', '<', '>');
             foreach (string item in splittedSentence)
             {
-                if(item == Word)
-                {
-                    WordCounter++;
-                }
+                if(item == Word) WordCounter++;
             }
             return WordCounter;
         }
