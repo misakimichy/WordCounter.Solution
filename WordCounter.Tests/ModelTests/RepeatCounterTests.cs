@@ -14,12 +14,21 @@ namespace WordCounter.Tests
             int result = testCounter.CountWord();
             Assert.AreEqual(1, result);
         }
+
         [TestMethod]
         public void CountWord_WordCounterIncrementsWhenWordIsRepeated_3()
         {
             RepeatCounter testCounter = new RepeatCounter("big", "I want to eat a big donut and a big cookie at a big cafe.");
             int result = testCounter.CountWord();
             Assert.AreEqual(3, result);
+        }
+
+        [TestMethod]
+        public void CountWord_WordCounterIncrementsOnlyWhenTheWordFullyMatches_0()
+        {
+            RepeatCounter testCounter = new RepeatCounter("big", "I want to eat a bigger donut.");
+            int result = testCounter.CountWord();
+            Assert.AreEqual(0, result);
         }
         
         [TestMethod]
