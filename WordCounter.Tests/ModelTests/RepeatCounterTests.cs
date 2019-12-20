@@ -8,6 +8,12 @@ namespace WordCounter.Tests
     public class WordCounterTest
     {
         [TestMethod]
+        public void RepeatCounterInstance_InstanceOfRepeatCounter_true()
+        {
+            RepeatCounter tesRepeatCounter = new RepeatCounter("big", "I want to eat a big donut.");
+            Assert.AreEqual(typeof(RepeatCounter), tesRepeatCounter.GetType());
+        }
+        [TestMethod]
         public void CountWord_ReturnWordCounter_1()
         {
             RepeatCounter testCounter = new RepeatCounter("big", "I want to eat a big donut.");
