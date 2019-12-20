@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
@@ -36,12 +35,7 @@ namespace WordCounter.Models
         {
             Console.WriteLine("\nPlease enter a word:");
             string wordInput = Console.ReadLine().ToLower().Trim();
-            bool isValid = RepeatCounter.CheckValidInput(wordInput);
-            if(!isValid)
-            {
-                ErrorMessage();
-                TakeWordInput();
-            }
+            CheckInput(wordInput, TakeWordInput);
             return wordInput;
         }
 
@@ -49,12 +43,7 @@ namespace WordCounter.Models
         {
             Console.WriteLine("\nPlease enter a sentence:");
             string sentenceInput = Console.ReadLine().ToLower().Trim();
-            bool isValid = RepeatCounter.CheckValidInput(sentenceInput);
-            if(!isValid)
-            {
-                ErrorMessage();
-                TakeSentenceInput();
-            }
+            CheckInput(sentenceInput, TakeSentenceInput);
             return sentenceInput;
         }
 
@@ -75,6 +64,16 @@ namespace WordCounter.Models
             else
             {
                 Console.WriteLine("See you next time!");
+            }
+        }
+
+        private static void CheckInput(string input, Func<string> RepeatMethod)
+        {
+            bool isValid = RepeatCounter.CheckValidInput(input);
+            if(!isValid)
+            {
+                ErrorMessage();
+                RepeatMethod();
             }
         }
 
