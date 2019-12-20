@@ -27,5 +27,19 @@ namespace WordCounter.Models
             }
             return WordCounter;
         }
+        public static bool CheckValidInput(string input)
+        {
+            int number;
+            bool isValid = Int32.TryParse(input, out number);
+            // Return true if input couldn't be parsed (= int)
+            if(!isValid)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

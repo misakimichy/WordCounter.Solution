@@ -21,5 +21,19 @@ namespace WordCounter.Tests
             int result = testCounter.CountWord();
             Assert.AreEqual(3, result);
         }
+        
+        [TestMethod]
+        public void CheckValidInput_CheckWordInputIsString_True()
+        {
+            bool result = RepeatCounter.CheckValidInput("big");
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void CheckValidInput_CheckSentenceInputIsString_True()
+        {
+            bool result = RepeatCounter.CheckValidInput("I want to eat a big donut.");
+            Assert.AreEqual(true, result);
+        }
     }
 }
