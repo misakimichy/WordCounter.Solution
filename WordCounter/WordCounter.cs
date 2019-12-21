@@ -6,6 +6,11 @@ namespace WordCounter.Models
     {
         static void Main()
         {
+            Start();
+        }
+
+        private static void Start()
+        {
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine("Welcome to the Word Counter! \nPlease input a word and a sentence, and we will count how many of the word is used in the sentence.");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -59,7 +64,7 @@ namespace WordCounter.Models
             }
             else if (userInput == "yes")
             {
-                Main();
+                Start();
             }
             else
             {
